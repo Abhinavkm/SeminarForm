@@ -6,15 +6,26 @@
   <title>Ασφαλής σελίδα πληρωμής</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<style>
+    h1,h2{
+        color: white;
+    }
+</style>
+<body class="bg-gray-100" style="background-color: rgb(205, 175, 129);">
   <div class="max-w-3xl mx-auto p-6">
+
+    <!-- Logo Section -->
+    <div class="text-center mb-8">
+        <img
+          src="https://changeland.com/wp-content/uploads/2019/09/CH-Changeland-%CE%9F%CF%81%CE%B9%CE%B6%CF%8C%CE%BD%CF%84%CE%B9%CE%BF-%CE%91%CF%81%CE%BD%CE%B7%CF%84%CE%B9%CE%BA%CF%8C600px.png"
+          alt="Changeland Logo"
+          class="max-w-xs mx-auto"
+        />
+      </div>
     <!-- Page Title -->
-    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
+    <h1 class="text-3xl font-bold text-center  mb-8">
       Σεμινάριο "Ευέλικτη Λιτή Επιχείρηση"
     </h1>
-    <p class="text-center text-lg text-gray-600 mb-8">
-      Ασφαλής σελίδα πληρωμής
-    </p>
 
     <!-- Image Section -->
     <div class="mb-8">
@@ -25,15 +36,15 @@
       />
     </div>
 
-    <!-- Heading Below Image -->
-    <h2 class="text-xl font-bold text-gray-800 mb-6" style="text-align: center;>
-      Συμπληρώστε τα στοιχεία σας, τρόπο πληρωμής, και προχωρήστε στην πληρωμή
-    </h2>
+ 
+    <p class="text-center text-lg  mb-8" style="color: white;">
+        Συμπληρώστε τα στοιχεία σας, τρόπο πληρωμής, και προχωρήστε στην πληρωμή
+    </p>
 
     <!-- Form -->
-    <div class="bg-white shadow-lg rounded-lg p-8">
+    <div class="bg-white shadow-lg rounded-lg p-8" style="background-color:rgb(238, 218, 197);color: white;">
       <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Υποβάλετε τα στοιχεία σας</h3>
-      <form id="webhookForm" class="space-y-6">
+      <form id="webhookForm" class="space-y-6" >
         <!-- Email -->
         <label class="block text-gray-700 font-medium">
           Email <span class="text-red-500">*</span>
@@ -132,10 +143,12 @@
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" 
-          class="w-full bg-blue-500 text-white font-bold py-2 rounded-lg hover:bg-blue-600 transition duration-200">
-          Υποβολή
-        </button>
+        <div class="mt-6 text-center">
+            <button type="submit" 
+              class="px-6 py-3 text-white rounded-lg font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: rgba(150, 111, 40, 0.845)">
+              Υποβολή
+            </button>
+          </div>
       </form>
     </div>
   </div>
