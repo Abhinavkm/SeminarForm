@@ -98,22 +98,6 @@
             min="0" step="0.01" required>
         </label>
 
-        <!-- Proof Upload -->
-        <div id="proofUpload" style="display: none;" class="mt-4">
-          <label class="block text-gray-700 font-medium">
-            Φορτώστε αποδεικτικό <span class="text-red-500">*</span>
-          </label>
-          <br>
-          <div class="relative flex items-center justify-center border-dashed border-2 border-gray-300 p-4 rounded-lg bg-gray-50">
-            <input type="file" id="proof" name="proof" accept=".pdf, image/*" 
-              class="absolute inset-0 opacity-0 cursor-pointer" required>
-            <div class="text-center">
-              <p class="text-gray-500 font-medium">Drag & drop your file here or click to upload</p>
-              <p class="text-sm text-gray-400">Accepted formats: .pdf, images</p>
-            </div>
-          </div>
-        </div>
-
         <!-- Payment Method -->
         <fieldset class="mt-4">
           <legend class="block text-gray-700 font-medium">Τρόπος πληρωμής: <span class="text-red-500">*</span></legend>
@@ -130,6 +114,22 @@
             </label>
           </div>
         </fieldset>
+
+        <!-- Proof Upload -->
+        <div id="proofUpload" style="display: none;" class="mt-4">
+          <label class="block text-gray-700 font-medium">
+            Φορτώστε αποδεικτικό <span class="text-red-500">*</span>
+          </label>
+          <br>
+          <div class="relative flex items-center justify-center border-dashed border-2 border-gray-300 p-4 rounded-lg bg-gray-50">
+            <input type="file" id="proof" name="proof" accept=".pdf, image/*" 
+              class="absolute inset-0 opacity-0 cursor-pointer" required>
+            <div class="text-center">
+              <p class="text-gray-500 font-medium">Drag & drop your file here or click to upload</p>
+              <p class="text-sm text-gray-400">Accepted formats: .pdf, images</p>
+            </div>
+          </div>
+        </div>
 
         <!-- Submit Button -->
         <button type="submit" 
