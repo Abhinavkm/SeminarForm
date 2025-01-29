@@ -47,7 +47,7 @@
       <form id="webhookForm" class="space-y-6" >
         <!-- Email -->
         <label class="block text-gray-700 font-medium">
-          Email (προσοχή: συμπλήρωσε το email όπου λάβατε την προσφορά μας) <span class="text-red-500">*</span>
+          Email <span class="text-red-500">*</span>
           <input type="email" id="email" name="email" 
             class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
         </label>
@@ -126,7 +126,7 @@
           </div>
         </fieldset>
 
-         <!-- Proof Upload Section -->
+        <!-- Proof Upload Section -->
         <div id="proofUpload" style="display: none;" class="mt-4">
             <label class="block text-gray-700 font-medium">
             Φορτώστε αποδεικτικό <span class="text-red-500">*</span>
@@ -147,7 +147,7 @@
             </div>
             </div>
         </div>
-
+  
 
         <!-- Submit Button -->
         <div class="mt-6 text-center">
@@ -167,21 +167,32 @@
     const cardPayment = document.getElementById('cardPayment');
     const bankTransfer = document.getElementById('bankTransfer');
     const proofField = document.getElementById('proof');
+    const fileDisplay = document.getElementById('fileDisplay');
 
-    proofField.addEventListener('change', function () {
-      if (proofField.files.length > 0) {
-        const fileName = proofField.files[0].name;
-        fileDisplay.innerHTML = `
-          <p class="text-gray-700 font-medium">Selected file:</p>
-          <p class="text-gray-900 font-semibold">${fileName}</p>
-        `;
+    form.addEventListener('change', function () {
+      if (bankTransfer.checked) {
+        proofUpload.style.display = 'block';
+        proofField.setAttribute('required', 'required');
       } else {
-        fileDisplay.innerHTML = `
-          <p class="text-gray-500 font-medium">Drag & drop your file here or click to upload</p>
-          <p class="text-sm text-gray-400">Accepted formats: .pdf, images</p>
-        `;
+        proofUpload.style.display = 'none';
+        proofField.removeAttribute('required');
       }
     });
+
+    proofField.addEventListener('change', function () {
+    if (proofField.files.length > 0) {
+      const fileName = proofField.files[0].name;
+      fileDisplay.innerHTML = `
+        <p class="text-gray-700 font-medium">Selected file:</p>
+        <p class="text-gray-900 font-semibold">${fileName}</p>
+      `;
+    } else {
+      fileDisplay.innerHTML = `
+        <p class="text-gray-500 font-medium">Drag & drop your file here or click to upload</p>
+        <p class="text-sm text-gray-400">Accepted formats: .pdf, images</p>
+      `;
+    }
+  });
 
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
